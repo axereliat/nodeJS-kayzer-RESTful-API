@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A node.js RESTful API for Kayzer",
   "main": "index.js",
+  "engines": {
+    "node": "10.9.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
