@@ -4,8 +4,6 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const cloudinary = require('cloudinary');
-const fs = require('fs');
 const checkAuth = require('../middleware/check-auth');
 //const cloudUpload = require('../lib/cloudinary');
 const cloudUpload = require('../lib/cloudinary-upload');
@@ -38,7 +36,7 @@ router.post('/',
         const watch = new Watch({
             _id: new mongoose.Types.ObjectId(),
             name: req.body.name,
-            image: req['imageUrl'] || null,
+            image: req.body['imageUrl'] || null,
             description: req.body.description,
             price: req.body.price,
             color: req.body.color,

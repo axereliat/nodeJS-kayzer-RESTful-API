@@ -18,7 +18,7 @@ module.exports = (filename, mimeTypes) => (
         }
 
         // validation
-        const mimetype = req.files[fileName].mimetype;
+        const mimetype = req.files[filename].mimetype;
         if (mimeTypes.indexOf(mimetype) === -1) {
             return res.status(400).json({
                 message: 'Only the following formats are supported: ' + mimeTypes.join(', ')
@@ -34,6 +34,7 @@ module.exports = (filename, mimeTypes) => (
 
             uploadToCloudinary(file)
                 .then(data => {
+
                     req.body[filename + 'Url'] = data.secure_url
                     next()
                 })
