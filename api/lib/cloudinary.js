@@ -15,6 +15,12 @@ module.exports = (fileName, mimeTypes) => (
             }).end();
         }
 
+        /*var dir = './tmp';
+
+        if (!fs.existsSync(dir)){
+            fs.mkdirSync(dir);
+        }*/
+
         // uploading locally on the server
         req.files[fileName].mv('uploads/' + req.files[fileName].name, (err) => {
             if (err) {

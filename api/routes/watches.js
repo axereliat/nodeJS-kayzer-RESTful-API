@@ -7,7 +7,8 @@ const mongoose = require('mongoose');
 const cloudinary = require('cloudinary');
 const fs = require('fs');
 const checkAuth = require('../middleware/check-auth');
-const cloudUpload = require('../lib/cloudinary');
+//const cloudUpload = require('../lib/cloudinary');
+const cloudUpload = require('../lib/cloudinary-upload');
 
 const Watch = require('../models/watch');
 
